@@ -49,15 +49,15 @@ I’m sharing some commands. Have a look:
 
   
       Command                  Description
-  1. app_list	            Show all installed applications
+  1. app_list	              Show all installed applications
   2. app_install	          Request to install apk file
   3. app_run	              Start an application
   4. app_uninstall	        Request to uninstall application
   5. dump_contacts	        Get all contacts and save in our PC
-  6. dump_calllog	        Get call log and save in our PC
-  7. dump_sms	            Get all sms and save in our PC
-  8. send_sms	            Send sms to any number
-  9. geolocacte	          Current lat and long of the device
+  6. dump_calllog	          Get call log and save in our PC
+  7. dump_sms	              Get all sms and save in our PC
+  8. send_sms	              Send sms to any number
+  9. geolocacte	            Current lat and long of the device
   10. record_mic	          Sound recorder
   11. webcam_list	          Available cameras
   12. webcam_snap 1/2/3	    Take photo by selecting camera
