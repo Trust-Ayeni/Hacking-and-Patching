@@ -3,6 +3,7 @@
 The 3rd course of the fundamentals of computer and network security specializations. Hacking and patching, it is a short course title, but it says it all. This repository explains how to hack devices with command injection vulnerability.
 
 # SCRCPY MODULE
+Using the scrcpy module is quite easy but still brainstorming on it additional functions
 # STEPS:
 1. Install scrcpy: use the command 'apt-get install scrcpy'
 2. Enable developer mode on the android to be coonected to the PC
