@@ -32,8 +32,8 @@
 
 # For Install:
 
- - git clone 
- - cd facehook/
+ - git clone https://github.com/Trust-Ayeni/Hacking-and-Patching.git
+ - cd into facehook/
  - pip install requests
  - pip install mechanize
 ***
