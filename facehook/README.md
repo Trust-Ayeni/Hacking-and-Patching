@@ -11,20 +11,17 @@
 
 
     - **Brute Force On Facebook Account Without proxy**:
+     * **Command**: python facehook.py -t Oseid@gmail.com -w wlist.txt
      
-     * **Command**: python faceboom.py -t Oseid@gmail.com -w wlist.txt
      
-         ![withoutProxy](https://user-images.githubusercontent.com/29546157/88088721-8af27d00-cb93-11ea-828c-b80f1996a234.PNG)
    
    - **Brute Force On Facebook Account With Proxy**:
-   
-    * **Command**: python faceboom.py -t Oseid@gmail.com -w wlist.txt -p 144.217.101.245:3129
+    * **Command**: python facehook.py -t Oseid@gmail.com -w wlist.txt -p 144.217.101.245:3129
     
-         ![withProxy](https://user-images.githubusercontent.com/29546157/88088728-8f1e9a80-cb93-11ea-964e-930aeea10dcd.PNG)
+   
 
    - **Get Target Facebook Profile ID**:
-   
-    * **Command**: python faceboom.py -g https://www.facebook.com/zuck
+    * **Command**: python facehook.py -g https://www.facebook.com/zuck
     
          ![getID](https://user-images.githubusercontent.com/29546157/88082079-f9cad880-cb89-11ea-894b-801e8c4fe369.PNG)
 
