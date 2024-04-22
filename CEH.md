@@ -7675,5 +7675,71 @@ The meeting also discussed practical examples using IP tables in Linux for firew
   - Don't rely solely on packet filtering.
 
 
+# Meeting Notes Summary
+
+## Intrusion Detection and Prevention Systems (IDS & IPS)
+
+- **Definition:** IDS/IPS are security devices on the network that inspect inbound and outbound traffic for suspicious patterns indicating a breach.
+  
+- **Functionality:** IDS detects suspicious activity, while IPS may prevent attacks based on predefined rules.
+
+- **Signature Matching:** IDS checks traffic against predefined signatures for known attack patterns.
+
+- **Placement:** IDS is usually placed behind the firewall, monitoring post-firewall traffic for anomalies.
+
+- **Role:** IDS works internally, monitoring for anomalies and known attack patterns, different from a firewall's external monitoring.
+
+- **Limitations:** IDS/IPS can't replace other security tools like logging systems, vulnerability assessments, etc.
+
+## IDS Classification
+
+1. **Approach:** Anomaly-based (detects anomalies), Signature-based (matches predefined signatures).
+  
+2. **Protective System:** Host-based IDS (HIDS), Network-based IDS (NIDS), Hybrid IDS (Combination of HIDS & NIDS).
+  
+3. **Structure:** Centralized IDS (monitors entire network centrally), Distributed IDS (uses agents on each device).
+  
+4. **Data Source:** Audit Trail (detects based on historical data), Network Packets (detects based on live traffic).
+
+5. **Behavior:** Active Response (responds to attacks actively), Passive (monitors without active response).
+  
+6. **Analysis Timing:** Interval-based (analyzes data periodically), Real-time (continuous analysis).
+
+## Components of an IDS
+
+1. **Network Sensors:** Placed at network entry points to monitor traffic.
+  
+2. **Command Console:** Provides a user interface to control and manage the IDS.
+  
+3. **Alert Systems:** Sends alerts for anomalies or potential attacks.
+  
+4. **Response System:** May include an Intrusion Prevention System (IPS) for active response.
+
+## Best Practices
+
+- **Signature Database:** Keep it updated to detect new threats promptly.
+  
+- **Placement:** Ensure sensors are strategically placed for effective monitoring.
+  
+- **Response:** Have a clear response plan for detected intrusions, considering false positives.
+
+
+# Meeting Notes Summary
+
+- **Assess Damage and Escalation:** The administrator will assess damage if an attack occurs, considering escalation procedures.
+- **Incident Response Plan:** Develop a plan for handling incidents, including logging events and utilizing SIMs for log review.
+- **IDS Deployment:** Plan a staged deployment of network or host-based IDS, starting with one subnet, then expanding.
+- **Monitoring and Maintenance:** Tailor monitoring to organization size, considering resources and critical subnets.
+- **IDS Placement:** Strategically place IDS sensors based on network topology, considering advantages and disadvantages.
+- **Host-Based IDS:** Consider deploying host-based IDS, especially on critical systems, ensuring log collection for analysis.
+- **Alert Management:** Graduated alerts are crucial, distinguishing true positives and negatives from false ones.
+- **Choosing an IDS:** Considerations include automation, fault tolerance, resistance to subversion, minimal overhead, and tuning for accuracy.
+- **Life-Cycle Costs:** Consider total costs over time, including device cost, maintenance subscriptions, updates, and support.
+
+## Tools for Intrusion Detection
+
+- **Snort:** Open-source IDS with rule language, widely used for network security.
+- **Suricata:** Offers real-time intrusion detection, inline IPS, network security monitoring, and offline pcap processing.
+- **Other Tools:** Include AlienVault OSSIM, SolarWinds Security Event Manager, OSSEC, Zeek (formerly Bro), and Sagan.
 
 
