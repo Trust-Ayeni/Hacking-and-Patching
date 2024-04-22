@@ -7569,3 +7569,45 @@ Key elements for security policies include clear communication, brevity, and inf
 The discussion covers the importance of environmental control, challenges in HVAC maintenance, EMI shielding, and key physical security measures.
 
 
+
+# Meeting Notes Summary
+
+## Network Segmentation
+
+- **Definition**: Network segmentation involves splitting the network into smaller segments.
+- **Benefits**:
+  - Improved security by controlling traffic flow.
+  - Better access control and monitoring.
+  - Enhanced performance and containment in case of attacks or failures.
+
+## Types of Network Segmentation
+
+1. **Physical Segmentation**:
+   - Utilizes physical routers/interfaces and shared connections like Layer 2 switches or hubs.
+   - Expensive and complex to maintain compared to logical segmentation.
+
+2. **Logical Segmentation (VLANs)**:
+   - Uses VLANs to create independent network segments.
+   - Offers flexibility and easier management compared to physical segmentation.
+
+3. **Network Virtualization**:
+   - Combines all networking resources into virtual units.
+   - Enables sharing of resources among users within a single administrative unit.
+   - Provides flexibility and consolidation in management.
+
+## Firewalls and Bastion Hosts
+
+- **Firewall Functions**:
+  - Blocks or allows protocols, ports, programs, and IP addresses.
+- **Bastion Host**:
+  - Acts as a firewall with limited services, focusing on the four Ps of firewall functions.
+- **Placement and Types**:
+  - Positioned in DMZs for external security.
+  - Various types include single home, multi-home, internal, external firewalls, etc.
+- **DMZ (Demilitarized Zone)**:
+  - A subnet between private and public networks, mainly for web servers and email servers.
+  - Configurations include single firewall with multiple interfaces and dual firewall DMZ for maximum security.
+
+The meeting covered network segmentation types, firewall functionalities, and the role of bastion hosts and DMZs in network security.
+
+
