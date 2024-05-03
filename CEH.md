@@ -8694,3 +8694,95 @@ It's essential to regularly review and update security policies and measures to 
   - Logging and Monitoring: Monitor device logs and actions for suspicious patterns and alerts.
   - Stack-Wise Security: Consider security measures across the entire IoT stack, from devices to the Cloud.
 
+
+- IoT Considerations for Security:
+  - Ubiquitous Encryption: Implement encryption for communication, storage, and updates to ensure data security.
+  - Update Capability: Ensure IoT devices have update mechanisms to address vulnerabilities and security patches.
+  - No Defaults: Avoid default settings and credentials to prevent easy access for attackers.
+  - Gateway Security: Implement multidirectional encrypted communications and strong authentication at the gateway level.
+  - Cloud Security: Use encrypted communication for data sent to and from the Cloud, secure web interfaces, and strong authentication methods.
+  - Mobile Security: Secure local storage, encrypt communications, use multifactor authentication, and implement account lockout policies to prevent brute-force attacks.
+
+
+- Disable guest and demo accounts; use lockout feature for excessive login attempts.
+- Implement strong authentication like 2FA or digital certificates.
+- Place control system networks behind firewalls and segment IoT networks from the main LAN.
+- Use intrusion prevention and detection systems (IPS/IDS) for IoT devices.
+- Employ end-to-end encryption, preferably with a PKI for digital certificates.
+- Utilize VPN for secure IoT device communication.
+- Deploy unified security solutions across the organization.
+- Consider using IoT security tools such as Bevywise IoT simulator, SeaCat.io, DigiCert, FortiNAC, Darktrace, and Cisco IoT Threat Defense.
+- Prioritize IoT security due to diverse applications and deployment scenarios.
+- Next module will cover cryptography and PKI concepts.
+
+
+
+## Cryptographic Techniques
+
+Cryptography has a long history, dating back to the early days of human communication and civilization. It involves converting plain text into encrypted text using algorithms. This encryption ensures confidentiality, authentication, integrity, and non-repudiation of data.
+
+### Symmetric Encryption
+
+Symmetric encryption uses a single key shared by both parties to encrypt and decrypt messages. Secure key exchange protocols like Diffie-Hellman facilitate the sharing of keys securely. Symmetric encryption is used for encrypting large amounts of data and is widely used on the Internet.
+
+### Asymmetric Encryption
+
+Asymmetric encryption involves two keys - a public key for encryption and a private key for decryption. The public key is shared openly, while the private key must be protected. Asymmetric encryption is suitable for smaller data transactions like email messages.
+
+### Government Access to Keys (GAK)
+
+Some countries require software companies to provide copies of encryption keys to the government for potential decryption in legal cases. This is akin to wiretapping phones and varies by country.
+
+Overall, cryptography plays a vital role in securing data and communications, ensuring privacy and security in digital transactions.
+
+
+## Cryptographic Algorithms
+
+Cryptographic algorithms are the mathematical and programmatic constructs that enable encryption and decryption of data. They can be classified into classical ciphers and modern ciphers.
+
+### Classical Ciphers
+
+- **Substitution Cipher**: Replaces plaintext with ciphertext using a specific substitution pattern.
+- **Transposition Cipher**: Rearranges plaintext characters to create ciphertext.
+
+### Modern Ciphers
+
+Modern ciphers are based on keys and data types:
+
+- **Symmetric Encryption**: Uses a single key for both encryption and decryption.
+  - **DES (Digital Encryption Standard)**: A block cipher, now replaced by AES due to vulnerabilities.
+  - **AES (Advanced Encryption Standard)**: An iterated block cipher and the current standard for symmetric encryption.
+- **Asymmetric Encryption**: Involves two keys, a public key for encryption and a private key for decryption.
+  - **RSA (Rivest–Shamir–Adleman)**: Used for encryption and authentication over the Internet.
+- **RC Algorithms (RC4, RC5, RC6)**: Symmetric key algorithms with different parameterizations and block sizes.
+
+### Digital Signature Algorithms
+
+- **DSA (Digital Signature Algorithm)**: Used for verifying signatures in federal applications.
+- **RSA**: Also used for authentication and encryption over the Internet.
+
+These cryptographic algorithms play a crucial role in securing data and communications, ensuring confidentiality, integrity, and authenticity.
+
+
+## Hashing Algorithms
+
+Hashing is a process that takes input data, such as text or a file, and generates a unique fixed-size string of characters, known as a hash. Hashing algorithms play a crucial role in ensuring data integrity, verifying file authenticity, and securing communication.
+
+### MD5 and SHA-1 Hashing
+
+- **MD5 (Message Digest Algorithm 5)**: Generates a 128-bit hash value. Note: MD5 is prone to hash collisions and is not recommended for production environments.
+- **SHA-1 (Secure Hash Algorithm 1)**: Generates a 160-bit hash value. Similar to MD5, SHA-1 is not collision-resistant and is not recommended for high-security applications.
+
+### Secure Hashing Algorithms
+
+- **MD6**: Uses a Merkle tree structure and is designed for parallel computation, long inputs, and differential cryptanalysis.
+- **SHA-2 (SHA-256, SHA-384, SHA-512)**: Family of secure hashing algorithms with different bit lengths, providing collision resistance and cryptographic security.
+- **SHA-3**: Uses a sponge construction and XOR operations, providing enhanced security and resistance against length extension attacks.
+
+### HMAC (Hash-Based Message Authentication Code)
+
+- **HMAC**: Combines a cryptographic key with a hash function to authenticate messages and ensure data integrity.
+  - Uses a core hashing algorithm along with an embedded hash function, enhancing security and mitigating hash collision risks.
+
+
+
