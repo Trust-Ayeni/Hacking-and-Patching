@@ -8785,4 +8785,38 @@ Hashing is a process that takes input data, such as text or a file, and generate
   - Uses a core hashing algorithm along with an embedded hash function, enhancing security and mitigating hash collision risks.
 
 
+- Cryptography has a long history and is essential for securing communications.
+- It involves converting plaintext into ciphertext using algorithms.
+- The main objectives of cryptography are confidentiality, authentication, integrity, and non-repudiation.
+- Symmetric encryption uses the same key for encryption and decryption and is used for large data volumes.
+- Asymmetric encryption uses different keys for encryption and decryption and is used for smaller data amounts.
+- DES (Data Encryption Standard) was widely used but is now replaced by AES (Advanced Encryption Standard).
+- AES is a symmetric key algorithm with key sizes of 128, 192, or 256 bits.
+- Other algorithms like RC4, RC5, RC6, DSA, and RSA are also used for encryption and authentication.
+- Hashing is used to generate unique hash values for data integrity and authentication.
+- MD5 and SHA-1 are older hash algorithms, while SHA-2 and SHA-3 are more secure.
+- HMAC (Hash-based Message Authentication Code) combines a hash function and a crypto key for message authentication.
+- There are various tools available for cryptography, such as MD5 hash calculators, hash generators, and encryption software.
+- These tools help in creating and verifying hashes, encrypting files and folders, and ensuring data security.
+
+
+- **PKI (Public Key Infrastructure) Overview:**
+  - PKI facilitates issuing digital certificates to entities for identity verification.
+  - Digital certificates ensure secure web communication via HTTPS.
+
+- **Digital Signatures and Data Integrity:**
+  - Digital signatures use asymmetric keys for data integrity.
+  - They don't encrypt messages but ensure they remain unchanged.
+
+- **Components and Functions of Digital Certificates:**
+  - Digital certificates are issued by CAs and bind public keys to owner names.
+  - Attributes include serial number, subject, signature algorithm, key usage, etc.
+
+- **PKI Components and Workflow:**
+  - PKI includes CA, RA, management tools, and directories for certificate storage.
+  - Workflow involves user requests, validation, and certificate issuance.
+
+- **Third-Party Certificates and Data Security:**
+  - Third-party providers like GoDaddy offer trusted certificates for secure communications.
+  - Next module covers data security for storing and securing user data.
 
