@@ -30,8 +30,8 @@ This Python script performs an asynchronous search for directories and files on 
 
 You can install the required package using pip:
 
-```bash
-pip install aiohttp```
+bash
+```pip install aiohttp```
 
 
 ## Usage
