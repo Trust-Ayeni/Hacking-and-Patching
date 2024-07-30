@@ -35,11 +35,11 @@ You can install the required package using pip:
 
 ## Usage
 To use the script, run it from the command line with the following arguments:
-```python async_dir_file_searcher.py <base_url> <wordlist_path> [--extensions <ext1> <ext2> ...] [--max_concurrent_requests <number>] [--max_retries <number>] [--batch_size <number>]```
+```python dir_file_searcher.py <base_url> <wordlist_path> [--extensions <ext1> <ext2> ...] [--max_concurrent_requests <number>] [--max_retries <number>] [--batch_size <number>]```
 
 ## Example
 To search a website with a wordlist and additional file extensions, you could run:
-```python async_dir_file_searcher.py http://example.com /path/to/wordlist.txt --extensions html asp php css js json --max_concurrent_requests 20 --batch_size 70```
+```python dir_file_searcher.py http://example.com /path/to/wordlist.txt --extensions html asp php css js json --max_concurrent_requests 20 --batch_size 70```
 
 ## Signal Handling
 The script handles SIGINT (Ctrl+C) and SIGTERM signals to ensure a graceful exit. If interrupted, it will stop processing and output the paths it has found up to that point.
