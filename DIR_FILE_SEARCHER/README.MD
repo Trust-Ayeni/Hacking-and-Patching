@@ -31,7 +31,7 @@ You can install the required package using pip:
 
 ```pip install aiohttp```
 
-```git clone https://github.com/Trust-Ayeni/Hacking-and-Patching/blob/main/DIR_FILE_SEARCHER/dir_file_searcher.py```
+```wget https://raw.githubusercontent.com/Trust-Ayeni/Hacking-and-Patching/main/DIR_FILE_SEARCHER/dir_file_searcher.py```
 
 ## Usage
 To use the script, run it from the command line with the following arguments:
