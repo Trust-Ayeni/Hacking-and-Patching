@@ -33,6 +33,9 @@ You can install the required package using pip:
 
 ```wget https://raw.githubusercontent.com/Trust-Ayeni/Hacking-and-Patching/main/DIR_FILE_SEARCHER/dir_file_searcher.py```
 
+```curl -O https://raw.githubusercontent.com/Trust-Ayeni/Hacking-and-Patching/main/DIR_FILE_SEARCHER/dir_file_searcher.py```
+
+
 ## Usage
 To use the script, run it from the command line with the following arguments:
 ```python dir_file_searcher.py <base_url> <wordlist_path> [--extensions <ext1> <ext2> ...] [--max_concurrent_requests <number>] [--max_retries <number>] [--batch_size <number>]```
