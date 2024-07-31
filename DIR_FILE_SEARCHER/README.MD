@@ -33,6 +33,8 @@ You can install the required package using pip:
 
 ```wget https://raw.githubusercontent.com/Trust-Ayeni/Hacking-and-Patching/main/DIR_FILE_SEARCHER/dir_file_searcher.py```
 
+OR
+
 ```curl -O https://raw.githubusercontent.com/Trust-Ayeni/Hacking-and-Patching/main/DIR_FILE_SEARCHER/dir_file_searcher.py```
 
 
