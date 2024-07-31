@@ -40,7 +40,7 @@ OR
 
 ## Usage
 To use the script, run it from the command line with the following arguments:
-```python dir_file_searcher.py <base_url> <wordlist_path> [--extensions <ext1> <ext2> ...] [--max_concurrent_requests <number>] [--max_retries <number>] [--batch_size <number>]```
+```python dir_file_searcher.py <base_url> <wordlist_path> --extensions <ext1> <ext2> ... --max_concurrent_requests <number> --max_retries <number> --batch_size <number>```
 
 ## Example
 To search a website with a wordlist and additional file extensions, you could run:
