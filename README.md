@@ -1,6 +1,6 @@
 # LINUX GUIDE
 ## Hacking-and-Patching
-The fundamentals of computer and network security specializations. Hacking and patching, it is a short course title, but it says it all. This repository explains how to hack devices with command injection vulnerability.
+The fundamentals of computer and network security specializations. Hacking and patching, it is a short course title, but it says it all. This repository explains how to hack devices ethically (for you ofcourse).
 
 # 1. SCRCPY MODULE
 Using the scrcpy module is quite easy but still brainstorming on it additional functions
