@@ -58,6 +58,10 @@ class AsyncDirFileSearcher:
                         logging.warning(f"Forbidden: {url} (HTTP 403)")
                     elif status == 404:
                         logging.info(f"{COLOR_RED}Not Found: {url} (HTTP 404){COLOR_RESET}")
+                    elif status == 429:  # Too Many Requests
+                        delay = response.headers.get('Retry-After', 60)  # Use header if available
+                        logging.warning(f"Rate limit hit: {url}. Retrying after {delay} seconds")
+                        await asyncio.sleep(float(delay))
                     else:
                         logging.warning(f"Received unexpected status code {status} for {url}")
                     return
