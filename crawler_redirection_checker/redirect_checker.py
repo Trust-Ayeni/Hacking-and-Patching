@@ -9,10 +9,8 @@ import logging
 import concurrent.futures
 import time
 import random
-from openpyxl import Workbook
-from openpyxl.styles import Font
+import csv
 import aiohttp
-import asyncio
 import asyncio
 
 # Improved logging setup
@@ -47,7 +45,7 @@ logger.setLevel(logging.INFO)
 # Session setup with retries and configurable timeout
 def create_session():
     session = requests.Session()
-    retries = Retry(total=3, backoff_factor=1, status_forcelist=[500, 502, 503, 504])
+    retries = Retry(total=2, backoff_factor=1, status_forcelist=[500, 502, 503, 504])
     session.mount('http://', HTTPAdapter(max_retries=retries))
     session.mount('https://', HTTPAdapter(max_retries=retries))
     return session
@@ -96,7 +94,7 @@ async def crawl_page_async(url, depth, max_depth, visited, session):
     await asyncio.gather(*tasks)
     return visited
 
-def crawl_page(url, depth=0, max_depth=4):
+def crawl_page(url, depth=0, max_depth=5):
     visited = set()
     async def main():
         async with aiohttp.ClientSession() as session:
@@ -107,7 +105,7 @@ def crawl_page(url, depth=0, max_depth=4):
 def check_redirection(url):
     try:
         start_time = time.time()
-        response = session.get(url, allow_redirects=True, timeout=30, headers={'User-Agent': random.choice(USER_AGENTS)})
+        response = session.get(url, allow_redirects=True, timeout=67, headers={'User-Agent': random.choice(USER_AGENTS)})
         end_time = time.time()
         status_code = response.status_code
         final_url = response.url
@@ -130,22 +128,15 @@ def save_results(results, output_file, format):
                 f.write(f"Final URL: {final}\n")
                 f.write(f"Redirected: {redirected}\n")
                 f.write("\n")
-    elif format == 'xlsx':
-        wb = Workbook()
-        ws = wb.active
-        ws.title = "URL Redirections"
-
-        headers = ["Original URL", "Final URL", "Redirected"]
-        for col, header in enumerate(headers, start=1):
-            cell = ws.cell(row=1, column=col, value=header)
-            cell.font = Font(bold=True)
-
-        for row, (original, final, redirected) in enumerate(results, start=2):
-            ws.cell(row=row, column=1, value=original)
-            ws.cell(row=row, column=2, value=final)
-            ws.cell(row=row, column=3, value=str(redirected))
-
-        wb.save(output_file)
+    elif format == 'csv':
+        try:
+            with open(output_file, 'w', newline='', encoding='utf-8') as csvfile:
+                csvwriter = csv.writer(csvfile)
+                csvwriter.writerow(["Original URL", "Final URL", "Redirected"])
+                for original, final, redirected in results:
+                    csvwriter.writerow([original, final, str(redirected)])
+        except Exception as e:
+            logger.error(f"Error saving results to {output_file}: {e}")
 
 def process_single_url(url, output, format, max_depth):
     logger.info(f"Processing single URL: {url}")
@@ -197,8 +188,8 @@ def validate_args(args):
         raise ValueError("Please provide a URL or a file containing URLs.")
     if args.url and args.file:
         raise ValueError("Please provide either a URL or a file, not both.")
-    if args.output and args.format not in ['txt', 'xlsx']:
-        raise ValueError("Invalid format specified. Choose 'txt' or 'xlsx'.")
+    if args.output and args.format not in ['txt', 'csv']:
+        raise ValueError("Invalid format specified. Choose 'txt' or 'csv'.")
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
@@ -206,9 +197,9 @@ if __name__ == '__main__':
         epilog=(
             "Example usage:"
             " python script.py -u http://example.com -d 2,"
-            " python script.py -u http://example.com -o results.xlsx -fmt xlsx -d 1,"
+            " python script.py -u http://example.com -o results.csv -fmt csv -d 1,"
             " python script.py -f urls.txt -d 1,"
-            " python script.py -f urls.txt -o results.xlsx -fmt xlsx -d 1,"
+            " python script.py -f urls.txt -o results.csv -fmt csv -d 1,"
             " Note:"
             "  For -u, provide a single URL."
             "  For -f, provide a file with one URL per line."
@@ -217,7 +208,7 @@ if __name__ == '__main__':
     parser.add_argument('-u', '--url', type=str, help="URL to check for redirections.")
     parser.add_argument('-f', '--file', type=str, help="Path to a file containing URLs to check for redirections.")
     parser.add_argument('-o', '--output', type=str, help="Path to the output file where results will be saved.")
-    parser.add_argument('-fmt', '--format', type=str, choices=['txt', 'xlsx'], help="Format for the output file (txt or xlsx).")
+    parser.add_argument('-fmt', '--format', type=str, choices=['txt', 'csv'], help="Format for the output file (txt or csv).")
     parser.add_argument('-d', '--depth', type=int, default=4, help="Maximum depth for crawling (default: 4)")
     args = parser.parse_args()
 
